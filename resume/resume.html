@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - M. Judson Abhishek</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    h1, h2, h3 {
+      margin-top: 0;
+      color: #007bff;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .section-header {
+      border-bottom: 2px solid #007bff;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+    }
+    .section-content {
+      padding-left: 20px;
+    }
+    .contact-details p {
+      margin: 5px 0;
+    }
+    .personal-details p {
+      margin: 5px 0;
+    }
+    .declaration {
+      margin-top: 20px;
+    }
+    ul {
+      padding-left: 20px;
+      list-style-type: none;
+    }
+    ul li {
+      margin-bottom: 5px;
+    }
+    .profile-img {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 150px;
+      border-radius: 20%;
+      border: 5px solid rgba(27, 9, 9, 0.427); 
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 0.8em;
+      color: #666;
+    }
+    .download-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .download-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="yourPortfolioId">
+    <header>
+      <img class="profile-img" src="https://cdn.glitch.global/e6801e36-c082-40e1-85d2-52fd6cafff67/mine.jpg?v=1708530244809"  alt="Profile Image">
+      <h1>M. Judson Abhishek</h1>
+      <div class="contact-details">
+        <p>Houseno: 21-5-36/1, Swarajya Nagar,</p>
+        <p>Old Khadhi Office Road, Kandukur,</p>
+        <p>Pin: 523105, Nellore District, Andhra Pradesh</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Career Objective</h2>
+      </div>
+      <div class="section-content">
+        <p>Aiming to achieve a challenging and professional position where I can make a significant contribution to the organization by utilizing all my skills.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Educational Qualifications</h2>
+      </div>
+      <div class="section-content">
+        <ul>
+          <li>10th passed from SSC with 95%</li>
+          <li>Inter passed with 96.3%</li>
+          <li>B.Tech pursuing with 93% in VITB</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Technical Skills</h2>
+      </div>
+      <div class="section-content">
+        <ul>
+          <li>C, Java</li>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Python</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Experience</h2>
+      </div>
+      <div class="section-content">
+        <p>Working Experience: No (Fresher)</p>
+      </div>
+    </section>
+
+    <section class="section personal-details">
+      <div class="section-header">
+        <h2>Personal Details</h2>
+      </div>
+      <div class="section-content">
+        <p>Father's Name: M. Moses</p>
+        <p>Date of Birth: 26-07-2004</p>
+        <p>Nationality: Indian</p>
+        <p>Gender: Male</p>
+        <p>Skills: Good Communication Skills</p>
+      </div>
+    </section>
+
+    <section class="section declaration">
+      <div class="section-content">
+        <p><strong>Declaration:</strong> I hereby declare that the information provided is true to the best of my knowledge and belief. In case of any false information, I am ready to face any consequences.</p>
+        <p>Date:20-02-2024</p>
+        <p>Place:Kandukur</p>
+        <p>(Judson Abhishek)</p>
+      </div>
+    </section>
+    <div class="footer">
+      <p>&copy; 2024 M. Judson Abhishek. All rights reserved.</p>
+    </div>
+  </div>
+
+
+  <button class="download-button" id="downloadButton">Download as PDF</button>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+  <script>
+    document.getElementById('downloadButton').addEventListener('click', function() {
+   
+      var element = document.getElementById('yourPortfolioId');
+      
+     
+      html2pdf(element, {
+        margin: 10,
+        filename: 'resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 }, 
+        html2canvas: { scale: 2 }, 
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } 
+      });
+    });
+  </script>
+</body>
+</html>
